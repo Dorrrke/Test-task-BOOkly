@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/booksMainPageFragment">
+
+    <fragment
+        android:id="@+id/booksMainPageFragment"
+        android:name="com.dorrrke.test_task_bookle.presentation.fragments.BooksMainPageFragment"
+        android:label="fragment_books_main_page"
+        tools:layout="@layout/fragment_books_main_page" >
+        <action
+            android:id="@+id/action_booksMainPageFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.dorrrke.test_task_bookle.presentation.fragments.BookDetailFragment"
+        android:label="fragment_book_detail"
+        tools:layout="@layout/fragment_book_detail" >
+        <action
+            android:id="@+id/action_bookDetailFragment_to_booksMainPageFragment"
+            app:destination="@id/booksMainPageFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
